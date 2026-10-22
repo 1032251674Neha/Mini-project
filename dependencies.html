@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dependencies | Smart Task Scheduler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dependencies">
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">S</div><div><strong>TaskFlow</strong><small>SMART TASK SCHEDULER</small></div></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav">
+        <a href="index.html" data-nav="dashboard">◫ Dashboard</a>
+        <a href="projects.html" data-nav="projects">▦ Projects</a>
+        <a href="tasks.html" data-nav="tasks">✓ Tasks</a>
+        <a href="dependencies.html" data-nav="dependencies">⇄ Dependencies</a>
+        <a href="history.html" data-nav="history">◷ Activity History</a>
+      </nav>
+      <div class="sidebar-bottom"><strong><span class="status-dot"></span>Workspace ready</strong><p>Plan smarter. Stay focused. Deliver on time.</p></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="btn mobile-menu" id="menuToggle">☰</button>
+        <div class="crumb">Workspace / <b>Dependencies</b></div>
+        <div class="top-actions"><input id="globalSearch" class="searchbox" placeholder="Search tasks..."><div class="avatar">ST</div></div>
+      </header>
+      <div class="content">
+        <div class="page-head"><div><div class="eyebrow">TASK LOGIC</div><h1>Dependencies</h1><p>Define prerequisites and execution order.</p></div><button class="btn btn-primary" id="addDependencyBtn">+ Add Dependency</button></div>
+        <div class="notice">The arrow means the prerequisite task should come before the dependent task.</div>
+        <section class="panel"><div class="panel-head"><div><h2>Dependency Map</h2><p>Prerequisite → dependent task</p></div></div><div id="dependencyList"></div></section>
+        <section class="panel"><div class="panel-head"><div><h2>Topological Order</h2><p>Suggested order based on dependencies</p></div></div><div id="topologicalOrder" class="dependency-flow"></div></section>
+        <div class="footer">SMART TASK SCHEDULER · ORGANIZE WORK WITH CLARITY</div>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Add Dependency</h2><button class="close" id="modalClose">×</button></div><div id="modalBody"></div><div class="modal-actions"><button class="btn" id="modalCancel">Cancel</button><button class="btn btn-primary" id="modalSave">Save</button></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

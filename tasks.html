@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks | Smart Task Scheduler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="tasks">
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">S</div><div><strong>TaskFlow</strong><small>SMART TASK SCHEDULER</small></div></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav">
+        <a href="index.html" data-nav="dashboard">◫ Dashboard</a>
+        <a href="projects.html" data-nav="projects">▦ Projects</a>
+        <a href="tasks.html" data-nav="tasks">✓ Tasks</a>
+        <a href="dependencies.html" data-nav="dependencies">⇄ Dependencies</a>
+        <a href="history.html" data-nav="history">◷ Activity History</a>
+      </nav>
+      <div class="sidebar-bottom"><strong><span class="status-dot"></span>Workspace ready</strong><p>Plan smarter. Stay focused. Deliver on time.</p></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="btn mobile-menu" id="menuToggle">☰</button>
+        <div class="crumb">Workspace / <b>Tasks</b></div>
+        <div class="top-actions"><input id="globalSearch" class="searchbox" placeholder="Search tasks..."><div class="avatar">ST</div></div>
+      </header>
+      <div class="content">
+        <div class="page-head"><div><div class="eyebrow">TASK MANAGEMENT</div><h1>Tasks</h1><p>Create, prioritize, and track every task.</p></div><button class="btn btn-primary" id="newTaskBtn">+ New Task</button></div>
+        <div class="toolbar">
+          <input id="taskSearch" placeholder="Search by task, project, or ID...">
+          <select id="statusFilter"><option value="all">All Statuses</option><option>Pending</option><option>In Progress</option><option>Completed</option></select>
+          <select id="priorityFilter"><option value="all">All Priorities</option><option>High</option><option>Medium</option><option>Low</option></select>
+        </div>
+        <section class="panel">
+          <div class="panel-head"><div><h2>Task Register</h2><p>Edit, filter, or delete tasks.</p></div></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Task</th><th>Project</th><th>Priority</th><th>Status</th><th>Deadline</th><th>Actions</th></tr></thead>
+            <tbody id="taskRows"></tbody>
+          </table></div>
+        </section>
+        <div class="footer">SMART TASK SCHEDULER · ORGANIZE WORK WITH CLARITY</div>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Create Task</h2><button class="close" id="modalClose">×</button></div><div id="modalBody"></div><div class="modal-actions"><button class="btn" id="modalCancel">Cancel</button><button class="btn btn-primary" id="modalSave">Save</button></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

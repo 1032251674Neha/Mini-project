@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Smart Task Scheduler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div><strong>TaskFlow</strong><small>SMART TASK SCHEDULER</small></div>
+      </div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav">
+        <a href="index.html" data-nav="dashboard">◫ Dashboard</a>
+        <a href="projects.html" data-nav="projects">▦ Projects</a>
+        <a href="tasks.html" data-nav="tasks">✓ Tasks</a>
+        <a href="dependencies.html" data-nav="dependencies">⇄ Dependencies</a>
+        <a href="history.html" data-nav="history">◷ Activity History</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <strong><span class="status-dot"></span>Workspace ready</strong>
+        <p>Plan smarter. Stay focused. Deliver on time.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="btn mobile-menu" id="menuToggle">☰</button>
+        <div class="crumb">Workspace / <b>Dashboard</b></div>
+        <div class="top-actions">
+          <input id="globalSearch" class="searchbox" placeholder="Search tasks...">
+          <div class="avatar">ST</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow">WORKSPACE OVERVIEW</div>
+            <h1>Dashboard</h1>
+            <p>Monitor projects, tasks, and productivity in one place.</p>
+          </div>
+          <button class="btn btn-primary" id="quickAddTask">+ Create Task</button>
+        </div>
+
+        <section class="stats" id="stats"></section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div><h2>Recent Tasks</h2><p>Latest tasks in your workspace</p></div>
+            <a class="text-link" href="tasks.html">View all →</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Task</th><th>Project</th><th>Priority</th><th>Status</th><th>Deadline</th><th>Actions</th></tr></thead>
+              <tbody id="recentTasks"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="grid-two">
+          <section class="panel">
+            <div class="panel-head"><div><h2>Task Progress</h2><p>Current task status breakdown</p></div></div>
+            <div id="statusProgress"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><div><h2>Recent Activity</h2><p>Latest workspace changes</p></div><a class="text-link" href="history.html">View history →</a></div>
+            <div id="activityList" class="activity"></div>
+          </section>
+        </div>
+        <div class="footer">SMART TASK SCHEDULER · ORGANIZE WORK WITH CLARITY</div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <div class="modal-head"><h2 id="modalTitle">Create Task</h2><button class="close" id="modalClose">×</button></div>
+      <div id="modalBody"></div>
+      <div class="modal-actions"><button class="btn" id="modalCancel">Cancel</button><button class="btn btn-primary" id="modalSave">Save</button></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
